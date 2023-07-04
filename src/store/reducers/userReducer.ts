@@ -22,15 +22,24 @@ export const userReducer = (state = initialState, action: UserReducerActionsType
 
 //actions
 export const fetchUsers = () => ({type: 'FETCH_USERS'}) as const
-export const fetchUsersSuccess = (users: Array<any>) => ({type: 'FETCH_USERS_SUCCESS', payload: users}) as const
+export const fetchUsersSuccess = (users: Array<UserType>) => ({type: 'FETCH_USERS_SUCCESS', payload: users}) as const
 export const fetchUsersError = (error: string) => ({type: 'FETCH_USERS_ERROR', payload: error}) as const
 
 
 //types
 export type UserStateType = {
-    users: Array<any>
+    users: Array<UserType>
     loading: boolean
     error: string | null
+}
+
+export type UserType = {
+    id: number
+    name: string
+    phone: string
+    email: string
+    username: string
+    website: string
 }
 
 type FetchUsersActionType = ReturnType<typeof fetchUsers>

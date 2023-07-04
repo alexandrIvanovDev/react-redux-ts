@@ -3,7 +3,7 @@ import {UsersList} from './components/UsersList';
 
 function App() {
     return (
-        <div>
+        <div style={{textAlign: 'center', marginTop: 50}}>
             <UsersList/>
         </div>
     );
